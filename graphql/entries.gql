@@ -1,0 +1,7 @@
+#import "./fragments/entryMetaFragment.gql"
+
+query articleTeaser($section: [String], $limit: Int) {
+  entries(section: $section, limit: $limit) {
+      ...entryMetaData
+  }
+}

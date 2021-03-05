@@ -1,0 +1,22 @@
+@import 'tailwindcss/base';
+
+/**
+ * Here we add custom base styles, applied after the tailwind-base
+ * classes
+ *
+ */
+@import './base/global.css';
+@import './base/typography.css';
+@import './base/webfonts.css';
+
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/**
+ * Here we add custom utility classes, applied after the tailwind-utilitie
+ * classes
+ *
+ */
+@import './utilities/svg.css';
+@import './vendor.css';
+

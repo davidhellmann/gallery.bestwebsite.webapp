@@ -1,0 +1,20 @@
+/**
+ * components/global.css
+ *
+ * Project-wide styles
+ *
+ */
+
+@layer base {
+  body {
+    @apply bg-white text-blue-800;
+  }
+
+  img {
+    @apply w-full;
+  }
+
+  #page-container {
+    @apply flex  flex-col  min-h-screen;
+  }
+}
