@@ -1,0 +1,10 @@
+fragment ratingStarratings on EntryInterface {
+  ... on websites_website_Entry {
+    starratingsCreativity
+    starratingsDesign
+    starratingsUsability
+  }
+}
+
+
+

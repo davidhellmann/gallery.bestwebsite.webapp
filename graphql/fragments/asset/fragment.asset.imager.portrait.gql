@@ -1,0 +1,5 @@
+fragment assetImagergPortrait on AssetInterface {
+  base64: url @imagerTransform(width: 20, format: "gif", return: "dataUri")
+  srcsetLegacy: url @imagerSrcset (handle: "portrait")
+  srcset: url @imagerSrcset (handle: "portraitWebp")
+}

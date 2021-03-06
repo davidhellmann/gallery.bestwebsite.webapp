@@ -30,6 +30,7 @@ export default {
         limit: 7,
         queryCategories: true,
         queryPreviewScreenshot: true,
+        queryStarratings: true,
       },
     },
     assets: {

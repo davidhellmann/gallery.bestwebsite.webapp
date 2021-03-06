@@ -1,0 +1,5 @@
+fragment assetImagerLandscape on AssetInterface {
+  base64: url @imagerTransform(width: 20, format: "gif", return: "dataUri")
+  srcsetLegacy: url @imagerSrcset (handle: "landscape")
+  srcset: url @imagerSrcset (handle: "landscapeWebp")
+}

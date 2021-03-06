@@ -1,4 +1,4 @@
-fragment assetImagerSquare on AssetInterface {
+fragment assetImagergSquare on AssetInterface {
   base64: url @imagerTransform(width: 20, format: "gif", return: "dataUri")
   srcsetLegacy: url @imagerSrcset (handle: "square")
   srcset: url @imagerSrcset (handle: "squareWebp")
