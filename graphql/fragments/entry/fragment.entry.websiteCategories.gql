@@ -1,0 +1,27 @@
+#import "../category/fragment.category.metaData.gql"
+
+fragment entryWebsiteCategories on EntryInterface {
+  ... on websites_website_Entry {
+    categoryColor, {
+      ...categoryMetaData
+    }
+    categoryCreator {
+      ...categoryMetaData
+    }
+    categoryCountry {
+      ...categoryMetaData
+    }
+    categoryStyle {
+      ...categoryMetaData
+    }
+    categoryCMS {
+      ...categoryMetaData
+    }
+    categoryFramework {
+      ...categoryMetaData
+    }
+    categoryService {
+      ...categoryMetaData
+    }
+  }
+}

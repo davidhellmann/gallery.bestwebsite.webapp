@@ -1,0 +1,9 @@
+#import "./fragments/asset/fragment.asset.metaData.gql"
+
+query HeevImages($title: [String]) {
+  assets(title: $title) {
+    ... on graphics_Asset {
+      ...assetMetaData
+    }
+  }
+}

@@ -2,12 +2,16 @@ const fs = require('fs')
 const fetch = require('cross-fetch')
 require('dotenv').config()
 const fileLocationForFetchedTypes = './possibleTypes.json'
-const apiUrl = process.env.BACKEND_URL + '/api'
+const apiUrl = process.env.API_BASE_URL + '/api'
+const apiToken = process.env.GRAPHQL_TOKEN
 if (apiUrl == null) throw new Error('❌ No API_URL found in .env')
 
 fetch(apiUrl, {
   method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: 'Bearer ' + apiToken,
+  },
   body: JSON.stringify({
     variables: {},
     query: `

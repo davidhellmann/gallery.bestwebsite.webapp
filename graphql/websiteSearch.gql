@@ -1,0 +1,18 @@
+query articleTeaser(
+  $section: [String],
+  $limit: Int,
+  $search: String,
+  $relatedToCategories: [CategoryCriteriaInput]
+) {
+  entries(
+    search: $search,
+    section: $section,
+    limit: $limit,
+    relatedToCategories: $relatedToCategories,
+    orderBy: "score"
+  ) {
+    id
+    title
+  }
+}
+

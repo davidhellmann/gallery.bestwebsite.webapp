@@ -23,14 +23,6 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  /**
-   * Remap ENV Variables
-   */
-  env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-    apiBaseUrl: process.env.API_BASE_URL || '',
-    appName: process.env.npm_package_name || '',
-  },
   /*
    ** Global CSS
    */
@@ -44,7 +36,7 @@ export default {
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
    */
-  components: true,
+  components: false,
   /*
    ** Nuxt.js dev-modules
    */
@@ -52,7 +44,7 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module',
+    // '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     // '@nuxtjs/tailwindcss',
   ],
@@ -65,7 +57,14 @@ export default {
     '@nuxtjs/apollo',
   ],
   publicRuntimeConfig: {
-    apiUrl: process.env.API_BASE_URL + '/api',
+    apiBaseUrl: process.env.API_BASE_URL + '/api' || '',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    assetBaseUrl: process.env.ASSET_BASE_URL || 'http://localhost:3000',
+    apiToken: process.env.GRAPHQL_TOKEN || '',
+    appName: process.env.npm_package_name || '',
+  },
+  privateRuntimeConfig: {
+    apiToken: process.env.GRAPHQL_TOKEN || '',
   },
   apollo: {
     includeNodeModules: true, // optional, default: false (this includes graphql-tag for node_modules folder)
@@ -86,6 +85,8 @@ export default {
     postcss: {
       plugins: {
         tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
+        'postcss-nested': {},
+        'postcss-hexrgba': {},
       },
     },
     preset: {

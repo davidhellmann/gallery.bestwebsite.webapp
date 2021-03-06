@@ -8,10 +8,10 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData: possibleTypes,
 })
 
-export default function ({ $config: { apiUrl } }) {
+export default function ({ $config: { apiBaseUrl, apiToken } }) {
   return {
-    httpEndpoint: apiUrl,
-    getAuth: () => 'Bearer UfZVKdBbtqGmlidg9M8aiSU37yzyzEnf',
+    httpEndpoint: apiBaseUrl,
+    getAuth: () => `Bearer ${apiToken}`,
     tokenName: 'apollo-token',
     cache: new InMemoryCache({
       fragmentMatcher,

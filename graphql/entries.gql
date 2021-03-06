@@ -1,7 +1,23 @@
-#import "./fragments/entryMetaFragment.gql"
+#import "./fragments/entry/fragment.entry.metaData.gql"
+#import "./fragments/entry/fragment.entry.websiteCategories.gql"
+#import "./fragments/asset/fragment.asset.metaData.gql"
+#import "./fragments/asset/fragment.asset.imager.auto.gql"
 
-query articleTeaser($section: [String], $limit: Int) {
+query entryQuery(
+  $section: [String],
+  $limit: Int,
+  $queryCategories: Boolean = false,
+  $queryPreviewScreenshot: Boolean = false,
+) {
   entries(section: $section, limit: $limit) {
-      ...entryMetaData
+    ...entryMetaData
+    ...entryWebsiteCategories @include(if: $queryCategories)
+    ... on websites_website_Entry {
+      imagePreviewScreenshot(limit: 1) @include(if: $queryPreviewScreenshot) {
+        ...assetMetaData
+        ...assetImagerAuto
+      }
+    }
   }
 }
+

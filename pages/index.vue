@@ -1,54 +1,44 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <Button to="/" variant="primary">Home</Button>
-      <Button to="/test" variant="secondary">Test</Button>
-      <ul style="display: flex; flex-flow: row wrap">
-        <li v-for="entry in entries" :key="entry.id" class="box bg-yellow-500">
-          <h3>{{ entry.title }}</h3>
-          Slug: {{ entry.slug }}<br />
-          URI: {{ entry.uri }}<br />
-          Post Date: {{ entry.postDate }}<br />
-          Entry Type: {{ entry.typeHandle }}<br />
-        </li>
-      </ul>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <SectionEl>
+    <div class="container mt-24">
+      <BlockSiteSummary :entry="entries[0] || null"></BlockSiteSummary>
     </div>
-  </div>
+  </SectionEl>
 </template>
 
 <script>
-import Button from '@/components/Button/Button'
-import articleTeaser from '../graphql/entries.gql'
+import websites from '../graphql/entries.gql'
+import heevImages from '../graphql/heevImages.gql'
+import BlockSiteSummary from '~/components/Block/BlockSiteSummary'
+import SectionEl from '~/components/Section/SectionEl'
 
 export default {
   components: {
-    Button,
+    SectionEl,
+    BlockSiteSummary,
+  },
+  data() {
+    return {
+      searchResults: [],
+    }
   },
   apollo: {
     entries: {
-      query: articleTeaser,
+      query: websites,
       variables: {
-        section: 'articles',
-        limit: 3,
+        section: 'websites',
+        limit: 7,
+        queryCategories: true,
+        queryPreviewScreenshot: true,
+      },
+    },
+    assets: {
+      query: heevImages,
+      variables: {
+        title: [
+          'Heev Bestwebsite Banner Desktop',
+          'Heev Bestwebsite Banner Mobile',
+        ],
       },
     },
   },
@@ -70,15 +60,6 @@ export default {
 
 .nuxt-link-exact-active {
   color: red;
-}
-
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 .title {

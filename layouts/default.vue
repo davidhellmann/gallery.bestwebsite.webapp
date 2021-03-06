@@ -1,5 +1,7 @@
 <template>
   <div>
-    <Nuxt />
+    <main>
+      <Nuxt />
+    </main>
   </div>
 </template>

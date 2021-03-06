@@ -1,12 +1,7 @@
 fragment entryMetaData on EntryInterface {
   id
-  dateUpdated
-  enabled
   postDate
-  sectionHandle
   slug
   uri
-  typeId
-  typeHandle
   title
 }

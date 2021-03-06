@@ -47,6 +47,8 @@
     "postcss-import": "^13.0.0",
     "postcss-loader": "^4.2.0",
     "postcss-url": "^10.1.1",
+    "postcss-hexrgba": "^2.0.1",
+    "postcss-nested": "^5.0.0",
     "prettier": "^2.1.2",
     "stylelint": "^13.10.0",
     "stylelint-config-prettier": "^8.0.2",
