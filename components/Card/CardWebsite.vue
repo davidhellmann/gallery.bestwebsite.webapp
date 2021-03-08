@@ -5,7 +5,12 @@
       tw,
     ]"
   >
-    <ImageRes :image="entry.imagePreviewScreenshot[0] || null" :lazy="false" />
+    <a :href="entry.uri">
+      <ImageRes
+        :image="entry.imagePreviewScreenshot[0] || null"
+        :lazy="false"
+      />
+    </a>
     <RatingWebsite v-if="ratings.length > 0" :ratings="ratings" />
   </div>
 </template>

@@ -16,7 +16,7 @@ https://stackoverflow.com/questions/48068520/nuxt-js-how-to-get-route-url-params
 </template>
 
 <script>
-// import websites from '../graphql/entries.gql'
+// import websites from '../graphql/entries.websites.gql'
 import websiteSearch from '../graphql/websiteSearch.gql'
 import heevImages from '../graphql/heevImages.gql'
 // import SiteSummary from '~/components/Block/SiteSummary'

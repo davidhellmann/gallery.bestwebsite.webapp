@@ -43,10 +43,6 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    // Doc: https://github.com/nuxt-community/stylelint-module
-    // '@nuxtjs/stylelint-module',
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    // '@nuxtjs/tailwindcss',
   ],
   /*
    ** Nuxt.js modules
@@ -77,6 +73,19 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /*
+   ** Router
+   ** See https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-router
+   */
+  router: {
+    // extendRoutes(routes, resolve) {
+    //   routes.push({
+    //     name: 'custom',
+    //     path: '*',
+    //     component: resolve(__dirname, 'pages/404.vue'),
+    //   })
+    // },
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

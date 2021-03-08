@@ -2,5 +2,5 @@ fragment categoryMetaData on CategoryInterface {
   id
   slug
   title
-  url
+  uri
 }

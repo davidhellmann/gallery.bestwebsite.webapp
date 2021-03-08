@@ -1,7 +1,0 @@
-query rating(
-  $id: Int!,
-) {
-  creativity: avgRating(elementId: $id, key: "creativity")
-  usability: avgRating(elementId: $id, key: "usability")
-  design: avgRating(elementId: $id, key: "design")
-}

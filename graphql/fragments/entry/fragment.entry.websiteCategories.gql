@@ -4,6 +4,11 @@ fragment entryWebsiteCategories on EntryInterface {
   ... on websites_website_Entry {
     categoryColor, {
       ...categoryMetaData
+      categoryFieldsColors {
+        ... on categoryFieldsColors_SuperTableField {
+          color
+        }
+      }
     }
     categoryCreator {
       ...categoryMetaData

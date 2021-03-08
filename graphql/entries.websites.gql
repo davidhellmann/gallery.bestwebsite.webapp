@@ -5,7 +5,7 @@
 #import "./fragments/rating/fragment.rating.starratings.gql"
 
 query entryQuery(
-  $section: [String],
+  $section: [String] = "websites",
   $limit: Int,
   $queryCategories: Boolean = false,
   $queryPreviewScreenshot: Boolean = false,

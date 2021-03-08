@@ -38,9 +38,9 @@ module.exports = {
       '2xl': '1536px',
     },
     fontFamily: {
-      sans: ['Lato', 'Helvetica', 'Arial', 'sans-serif'],
-      serif: ['Merriweather', 'Georgia', 'Times New Roman', 'Times', 'serif'],
-      mono: ['"JetBrains Mono"', '"Courier New"', 'Courier', 'monospace'],
+      sans: ['Rubik', 'Helvetica', 'Arial', 'sans-serif'],
+      serif: ['Georgia', 'Times New Roman', 'Times', 'serif'],
+      mono: ['"Courier New"', 'Courier', 'monospace'],
     },
     fontSize: settingsFontSizes.fontSize,
     colors: settingsColors.colors,

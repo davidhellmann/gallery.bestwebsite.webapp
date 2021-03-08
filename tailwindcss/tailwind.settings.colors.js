@@ -11,23 +11,17 @@ module.exports = {
     black: colors.black,
     white: colors.white,
     gray: colors.warmGray,
-    beige: {
-      100: '#F6F4F3',
-      500: '#E9E2E2',
-    },
-    yellow: {
-      500: '#FFEC2D',
-      600: '#ebd82d',
-    },
-    green: {
-      500: '#19BD0A',
-      600: '#19a90a',
-    },
     blue: {
-      200: '#B8CFDA',
-      300: '#a4bbc6',
-      800: '#003B5C',
-      900: '#002748',
+      50: '#fafcff',
+      100: '#fafcff',
+      200: '#d1e5ff',
+      300: '#a3cbff',
+      400: '#66a8ff',
+      500: '#0571ff',
+      600: '#0061e0',
+      700: '#0054c2',
+      800: '#004094',
+      900: '#002657',
     },
   },
 }

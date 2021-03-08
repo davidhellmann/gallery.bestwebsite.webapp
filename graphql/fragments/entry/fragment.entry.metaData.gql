@@ -1,6 +1,6 @@
 fragment entryMetaData on EntryInterface {
   id
-  postDate
+  postDate @formatDateTime (format: "d. F Y")
   slug
   uri
   title

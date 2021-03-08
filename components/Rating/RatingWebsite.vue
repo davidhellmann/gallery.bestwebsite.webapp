@@ -9,9 +9,11 @@
         <div class="flex-shrink-0 flex-grow-0 w-24 text-xs uppercase font-bold">
           {{ item.name }}
         </div>
-        <div class="flex-auto bg-gray-100 h-1.5 relative">
+        <div
+          class="flex-auto bg-gray-100 h-1.5 relative rounded-full overflow-hidden"
+        >
           <span
-            class="bg-blue-800 h-full inline-block absolute left-0"
+            class="bg-gray-400 h-full inline-block absolute left-0"
             :style="{ width: item.ratingPercent }"
           ></span>
         </div>
