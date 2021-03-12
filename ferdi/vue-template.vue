@@ -8,37 +8,39 @@ var cn = pathOptions.key.charAt(0) + '-' + mn;
 %>
 -->
 <template>
-  <div :class="rootClass">
-    <%= mn %>
-  </div>
+  <div :class="[tw]"><%= mn %></div>
 </template>
 
 <script>
-export default {
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: '<%= mn.charAt(0).toUpperCase() %><%= mn.slice(1) %>',
   components: {},
   props: {
-    modifiers: {
-      type: Array,
-      default: () => [],
+    tw: {
+      type: String,
+      default: '',
     },
+  },
+  setup() {
+    return {}
   },
   data() {
     return {
       cn: '<%= cn %>',
-    };
+    }
   },
   computed: {
     rootClass() {
       const modifiers = this.modifiers
-        .map(mod => `${this.cn}--${mod}`)
-        .join('  ');
-      return [this.cn, modifiers];
+        .map((mod) => `${this.cn}--${mod}`)
+        .join('  ')
+      return [this.cn, modifiers]
     },
   },
   watch: {},
   mounted() {},
   created() {},
   methods: {},
-};
+})
 </script>
