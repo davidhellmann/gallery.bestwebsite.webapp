@@ -17,11 +17,12 @@ https://stackoverflow.com/questions/48068520/nuxt-js-how-to-get-route-url-params
 
 <script>
 // import websites from '../graphql/entries.websites.gql'
+import { defineComponent } from '@nuxtjs/composition-api'
 import websiteSearch from '../graphql/websiteSearch.gql'
 import heevImages from '../graphql/heevImages.gql'
 // import SiteSummary from '~/components/Block/SiteSummary'
 
-export default {
+export default defineComponent({
   // components: { SiteSummary },
   data() {
     return {
@@ -29,7 +30,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$route)
+    // console.log(this.$route) // eslint-disable-line
   },
   apollo: {
     entries: {
@@ -63,5 +64,5 @@ export default {
       },
     },
   },
-}
+})
 </script>

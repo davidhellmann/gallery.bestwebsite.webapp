@@ -32,10 +32,9 @@ fetch(apiUrl, {
   .then((result) => result.json())
   .then((result) => {
     // here we're filtering out any type information unrelated to unions or interfaces
-    const filteredData = result.data.__schema.types.filter(
+    result.data.__schema.types = result.data.__schema.types.filter(
       (type) => type.possibleTypes !== null
     )
-    result.data.__schema.types = filteredData
 
     fs.writeFile(
       fileLocationForFetchedTypes,
@@ -44,7 +43,7 @@ fetch(apiUrl, {
         if (err) {
           throw new Error('❌ Error writing possibleTypes.json', err)
         } else {
-          console.log('✅ Fragment types successfully extracted!')
+          console.log('✅ Fragment types successfully extracted!') // eslint-disable-line
         }
       }
     )

@@ -22,4 +22,4 @@ module.exports = {
       paddingRight: '4rem',
     },
   },
-};
+}

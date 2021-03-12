@@ -6,6 +6,7 @@
     <aside>
       <h1 class="text-5xl">{{ entry.title }}</h1>
       <p class="font-light text-blue-500 mt-4">SOTD: {{ entry.postDate }}</p>
+      {{ entry.categoryCountry[0].uri }}
       <Link v-if="entry.categoryCountry[0]" :to="entry.categoryCountry[0].uri">
         {{ entry.categoryCountry[0].title }}
       </Link>
@@ -30,10 +31,11 @@
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
 import CardWebsite from '~/components/Card/CardWebsite'
 import Link from '~/components/Link/Link'
-export default {
-  name: 'SectionSiteSummary',
+export default defineComponent({
+  name: 'BlockSiteSummary',
   components: {
     Link,
     CardWebsite,
@@ -42,6 +44,7 @@ export default {
     tw: {
       type: String,
       default: '',
+      required: true,
     },
     entry: {
       type: Object,
@@ -52,7 +55,7 @@ export default {
     return {}
   },
   computed: {},
-}
+})
 </script>
 
 <style lang="postcss" scoped>

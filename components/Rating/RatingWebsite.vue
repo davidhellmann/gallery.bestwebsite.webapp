@@ -29,7 +29,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from '@nuxtjs/composition-api'
+
+export default defineComponent({
   name: 'RatingWebsite',
   props: {
     tw: {
@@ -75,5 +77,5 @@ export default {
       ).toFixed(2)
     },
   },
-}
+})
 </script>

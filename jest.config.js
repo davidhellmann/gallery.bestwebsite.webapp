@@ -1,5 +1,6 @@
 module.exports = {
   moduleNameMapper: {
+    '@nuxtjs/composition-api': '@nuxtjs/composition-api/lib/entrypoint.js',
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
     '^vue$': 'vue/dist/vue.common.js',

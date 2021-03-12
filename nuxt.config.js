@@ -1,11 +1,17 @@
 import path from 'path'
+import { defineNuxtConfig } from '@nuxtjs/composition-api'
 
-export default {
+export default defineNuxtConfig({
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: 'server',
+  generate: {
+    // choose to suit your project
+    interval: 3000,
+  },
+
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -41,6 +47,8 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
+    // Doc: https://composition-api.nuxtjs.org/getting-started/setup/
+    '@nuxtjs/composition-api',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
   ],
@@ -78,6 +86,7 @@ export default {
    ** See https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-router
    */
   router: {
+    base: '/',
     // extendRoutes(routes, resolve) {
     //   routes.push({
     //     name: 'custom',
@@ -85,6 +94,22 @@ export default {
     //     component: resolve(__dirname, 'pages/404.vue'),
     //   })
     // },
+    extendRoutes(routes, resolve) {
+      routes.push(
+        {
+          path: '/sites/sotd/:year/:month/:day/:slug',
+          components: {
+            default: resolve(__dirname, 'pages/sites/_slug'), // or routes[index].component
+          },
+        },
+        {
+          path: '*',
+          components: {
+            default: resolve(__dirname, 'pages/404'), // or routes[index].component
+          },
+        }
+      )
+    },
   },
   /*
    ** Build configuration
@@ -102,4 +127,4 @@ export default {
       stage: 1, // see https://tailwindcss.com/docs/using-with-preprocessors#future-css-featuress
     },
   },
-}
+})

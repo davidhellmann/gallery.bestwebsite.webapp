@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from '@nuxtjs/composition-api'
+
+export default defineComponent({
   name: 'SectionEl',
   props: {
     tw: {
@@ -13,5 +15,5 @@ export default {
       default: '',
     },
   },
-}
+})
 </script>

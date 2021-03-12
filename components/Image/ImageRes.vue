@@ -44,7 +44,9 @@
 
 <script>
 // https://twitter.com/_philippkuehn/status/1091025762218594304
-export default {
+import { defineComponent } from '@nuxtjs/composition-api'
+
+export default defineComponent({
   name: 'ResImage',
   /*
   transform: 'landscape',
@@ -71,5 +73,5 @@ export default {
     },
   },
   computed: {},
-}
+})
 </script>

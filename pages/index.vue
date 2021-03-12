@@ -1,25 +1,39 @@
 <template>
-  <SectionEl>
-    <div class="container mt-24">
-      <BlockSiteSummary :entry="entries[0] || null"></BlockSiteSummary>
-    </div>
-  </SectionEl>
+  <div>
+    <SectionEl>
+      <div class="container mt-24">
+        <BlockSiteSummary v-if="entries" :entry="entries[0]"></BlockSiteSummary>
+      </div>
+    </SectionEl>
+    <SectionEl>
+      <div class="container mt-24">
+        <BlockRelatedWebsites
+          v-if="entries"
+          :entries="entries"
+        ></BlockRelatedWebsites>
+      </div>
+    </SectionEl>
+  </div>
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
 import websites from '../graphql/entries.websites.gql'
 import heevImages from '../graphql/heevImages.gql'
 import BlockSiteSummary from '~/components/Block/BlockSiteSummary'
-import SectionEl from '~/components/Section/SectionEl'
+import BlockRelatedWebsites from '~/components/Block/BlockRelatedWebsites'
+import SectionEl from '~/components/Section/SectionEl.vue'
 
-export default {
+export default defineComponent({
   components: {
     SectionEl,
     BlockSiteSummary,
+    BlockRelatedWebsites,
   },
   data() {
     return {
       searchResults: [],
+      pending: false,
     }
   },
   apollo: {
@@ -42,11 +56,5 @@ export default {
       },
     },
   },
-}
+})
 </script>
-
-<style>
-.nuxt-link-exact-active {
-  color: red;
-}
-</style>

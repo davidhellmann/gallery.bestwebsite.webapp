@@ -12,7 +12,8 @@
  * </Dimensions>
  */
 
-export default {
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Dimensions',
 
   data() {
@@ -46,5 +47,5 @@ export default {
       height: this.height,
     })
   },
-}
+})
 </script>

@@ -16,10 +16,11 @@
 </template>
 
 <script>
+import { defineComponent } from '@nuxtjs/composition-api'
 import ImageRes from '~/components/Image/ImageRes'
 import RatingWebsite from '~/components/Rating/RatingWebsite'
 
-export default {
+export default defineComponent({
   name: 'CardWebsite',
   components: { RatingWebsite, ImageRes },
   props: {
@@ -63,5 +64,5 @@ export default {
       }
     },
   },
-}
+})
 </script>

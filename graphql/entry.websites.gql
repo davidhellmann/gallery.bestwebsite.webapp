@@ -1,0 +1,26 @@
+#import "./fragments/entry/fragment.entry.metaData.gql"
+#import "./fragments/entry/fragment.entry.websiteCategories.gql"
+#import "./fragments/asset/fragment.asset.metaData.gql"
+#import "./fragments/asset/fragment.asset.imager.auto.gql"
+#import "./fragments/rating/fragment.rating.starratings.gql"
+
+query entryQuery(
+  $section: [String] = "websites",
+  $id: [QueryArgument!],
+  $queryCategories: Boolean = false,
+  $queryPreviewScreenshot: Boolean = false,
+  $queryStarratings: Boolean = false,
+) {
+  entry(section: $section, id: $id) {
+    ...entryMetaData
+    ... on websites_website_Entry {
+      ...entryWebsiteCategories @include(if: $queryCategories)
+      ...ratingStarratings @include(if: $queryStarratings)
+      imagePreviewScreenshot(limit: 1) @include(if: $queryPreviewScreenshot) {
+        ...assetMetaData
+        ...assetImagerAuto
+      }
+    }
+  }
+}
+
