@@ -1,0 +1,11 @@
+#import "./fragments/asset/fragment.asset.metaData.gql"
+#import "./fragments/asset/fragment.asset.colorPalette.gql"
+#import "./fragments/asset/fragment.asset.imager.shareImage.gql"
+
+query FallbackImages($id: [QueryArgument] = [91118]) {
+  fallbackImageLink: assets(id: $id) {
+    ...assetMetaData
+    ...assetColorPalette
+    ...assetImagerShareImage
+  }
+}

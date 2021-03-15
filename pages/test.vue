@@ -3,8 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">davidhellmann-webapp</h1>
-      <Button to="/" variant="primary">Home</Button>
-      <Button to="/test" variant="secondary">Test</Button>
+
       <ul style="display: flex; flex-flow: row wrap">
         <li v-for="entry in entries" :key="entry.id" class="box">
           <h3>{{ entry.title }}</h3>

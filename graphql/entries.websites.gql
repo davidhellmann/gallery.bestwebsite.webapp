@@ -2,16 +2,17 @@
 #import "./fragments/entry/fragment.entry.websiteCategories.gql"
 #import "./fragments/asset/fragment.asset.metaData.gql"
 #import "./fragments/asset/fragment.asset.imager.auto.gql"
+#import "./fragments/asset/fragment.asset.colorPalette.gql"
 #import "./fragments/rating/fragment.rating.starratings.gql"
 
-query entryQuery(
+query entriesWebsites(
   $section: [String] = "websites",
   $limit: Int,
   $queryCategories: Boolean = false,
   $queryPreviewScreenshot: Boolean = false,
   $queryStarratings: Boolean = false,
 ) {
-  entries(section: $section, limit: $limit) {
+  entriesWebsites: entries(section: $section, limit: $limit) {
     ...entryMetaData
     ... on websites_website_Entry {
       ...entryWebsiteCategories @include(if: $queryCategories)
@@ -19,6 +20,7 @@ query entryQuery(
       imagePreviewScreenshot(limit: 1) @include(if: $queryPreviewScreenshot) {
         ...assetMetaData
         ...assetImagerAuto
+        ...assetColorPalette
       }
     }
   }

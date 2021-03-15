@@ -6,12 +6,13 @@
 
 query entryQuery(
   $section: [String] = "websites",
-  $id: [QueryArgument!],
+  $id: [QueryArgument] = null,
+  $slug: [String] = "",
   $queryCategories: Boolean = false,
   $queryPreviewScreenshot: Boolean = false,
   $queryStarratings: Boolean = false,
 ) {
-  entry(section: $section, id: $id) {
+  entry(section: $section, id: $id, slug: $slug) {
     ...entryMetaData
     ... on websites_website_Entry {
       ...entryWebsiteCategories @include(if: $queryCategories)

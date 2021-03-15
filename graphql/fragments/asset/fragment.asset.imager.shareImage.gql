@@ -1,0 +1,5 @@
+fragment assetImagerShareImage on AssetInterface {
+  base64: url @imagerTransform(width: 20, format: "gif", return: "dataUri")
+  srcsetLegacy: url @imagerSrcset (handle: "shareImage")
+  srcset: url @imagerSrcset (handle: "shareImageWebp")
+}

@@ -1,5 +1,5 @@
 <template>
-  <figure :class="[tw]">
+  <figure :class="[tw]" :style="getDominantColor">
     <img
       :src="image.base64"
       :srcset="
@@ -14,32 +14,6 @@
       decoding="async"
     />
   </figure>
-  <!--  <figure>
-    <div
-      v-if="background"
-      :data-bgset="sources"
-      :class="{
-        'w-full absolute pin-t pin-r pin-b pin-l max-h-full': presized,
-      }"
-      :style="{ backgroundPosition: bgPosition }"
-      data-sizes="auto"
-      class="lazyload bg-no-repeat bg-cover h-full"
-    >
-      <slot />
-    </div>
-    <img
-      v-if="!background"
-      :alt="alt"
-      :data-srcset="sources"
-      :class="{
-        'w-full absolute pin-t pin-r pin-b pin-l max-h-full': presized,
-      }"
-      data-sizes="auto"
-      class="lazyload block"
-    />
-
-    <figcaption v-if="caption" class="text-sm py-1" v-html="caption" />
-  </figure>-->
 </template>
 
 <script>
@@ -48,16 +22,6 @@ import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   name: 'ResImage',
-  /*
-  transform: 'landscape',
-  objectFit: null,
-  lazy: true,
-  showDominantColor: true,
-  calcDominantColor: false,
-  noscript: true,
-  sources: null,
-  caption: null-->
-  * */
   props: {
     tw: {
       type: String,
@@ -72,6 +36,14 @@ export default defineComponent({
       default: true,
     },
   },
-  computed: {},
+  computed: {
+    getDominantColor() {
+      return `background-color: ${
+        this.image.assetColorPalette && this.image.assetColorPalette.length > 0
+          ? this.image.assetColorPalette[0].assetColor
+          : 'transparent'
+      }`
+    },
+  },
 })
 </script>

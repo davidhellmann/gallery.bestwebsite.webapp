@@ -31,7 +31,8 @@ export default defineComponent({
     },
     // eslint-disable-next-line vue/return-in-computed-property
     props() {
-      if (this.tag === 'NuxtLink') return { to: this.to }
+      if (this.tag === 'NuxtLink')
+        return { to: this.to === '/' ? '/' : `/${this.to}` }
       if (this.tag === 'a') return { href: this.href }
       if (this.tag === 'button') return { type: 'button' }
     },

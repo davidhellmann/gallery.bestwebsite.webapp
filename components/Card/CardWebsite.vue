@@ -5,24 +5,26 @@
       tw,
     ]"
   >
-    <a :href="entry.uri">
+    <Link :to="entry.uri" class="group inline-block">
       <ImageRes
+        class="group-hover:opacity-10 transition duration-300"
         :image="entry.imagePreviewScreenshot[0] || null"
         :lazy="false"
       />
-    </a>
+    </Link>
     <RatingWebsite v-if="ratings.length > 0" :ratings="ratings" />
   </div>
 </template>
 
 <script>
 import { defineComponent } from '@nuxtjs/composition-api'
+import Link from '@/components/Link/Link'
 import ImageRes from '~/components/Image/ImageRes'
 import RatingWebsite from '~/components/Rating/RatingWebsite'
 
 export default defineComponent({
   name: 'CardWebsite',
-  components: { RatingWebsite, ImageRes },
+  components: { Link, RatingWebsite, ImageRes },
   props: {
     tw: {
       type: String,

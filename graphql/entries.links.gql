@@ -1,0 +1,25 @@
+#import "./fragments/entry/fragment.entry.metaData.gql"
+#import "./fragments/entry/fragment.entry.linkCategories.gql"
+#import "./fragments/asset/fragment.asset.metaData.gql"
+#import "./fragments/asset/fragment.asset.imager.shareImage.gql"
+#import "./fragments/asset/fragment.asset.colorPalette.gql"
+
+query entriesLinks(
+  $section: [String] = "links",
+  $limit: Int,
+  $queryCategories: Boolean = false,
+  $queryOGImage: Boolean = false,
+) {
+  entriesLinks: entries(section: $section, limit: $limit) {
+    ...entryMetaData
+    ... on links_links_Entry {
+      ...entryLinkCategories @include(if: $queryCategories)
+      imageOGImage(limit: 1) @include(if: $queryOGImage) {
+        ...assetMetaData
+        ...assetImagerShareImage
+        ...assetColorPalette
+      }
+    }
+  }
+}
+

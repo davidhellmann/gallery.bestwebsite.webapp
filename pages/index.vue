@@ -2,15 +2,27 @@
   <div>
     <SectionEl>
       <div class="container mt-24">
-        <BlockSiteSummary v-if="entries" :entry="entries[0]"></BlockSiteSummary>
+        <BlockSiteSummary
+          v-if="entriesWebsites"
+          :entry="entriesWebsites[0]"
+        ></BlockSiteSummary>
       </div>
     </SectionEl>
     <SectionEl>
-      <div class="container mt-24">
+      <div class="container mt-48">
         <BlockRelatedWebsites
-          v-if="entries"
-          :entries="entries"
+          v-if="entriesWebsites"
+          :entries="entriesWebsites.slice(1)"
         ></BlockRelatedWebsites>
+      </div>
+    </SectionEl>
+    <SectionEl>
+      <div class="container mt-48">
+        <BlockRelatedLinks
+          v-if="entriesLinks"
+          :entries="entriesLinks"
+          :fallback-image="fallbackImageLink || []"
+        ></BlockRelatedLinks>
       </div>
     </SectionEl>
   </div>
@@ -18,26 +30,27 @@
 
 <script>
 import { defineComponent } from '@nuxtjs/composition-api'
+import BlockRelatedLinks from '@/components/Block/BlockRelatedLinks'
 import websites from '../graphql/entries.websites.gql'
+import links from '../graphql/entries.links.gql'
 import heevImages from '../graphql/heevImages.gql'
+import fallbackImages from '../graphql/assets.fallbacks.gql'
 import BlockSiteSummary from '~/components/Block/BlockSiteSummary'
 import BlockRelatedWebsites from '~/components/Block/BlockRelatedWebsites'
 import SectionEl from '~/components/Section/SectionEl.vue'
 
 export default defineComponent({
   components: {
+    BlockRelatedLinks,
     SectionEl,
     BlockSiteSummary,
     BlockRelatedWebsites,
   },
   data() {
-    return {
-      searchResults: [],
-      pending: false,
-    }
+    return {}
   },
   apollo: {
-    entries: {
+    entriesWebsites: {
       query: websites,
       variables: {
         limit: 7,
@@ -46,7 +59,18 @@ export default defineComponent({
         queryStarratings: true,
       },
     },
-    assets: {
+    entriesLinks: {
+      query: links,
+      variables: {
+        limit: 12,
+        queryCategories: true,
+        queryOGImage: true,
+      },
+    },
+    fallbackImageLink: {
+      query: fallbackImages,
+    },
+    heevImages: {
       query: heevImages,
       variables: {
         title: [

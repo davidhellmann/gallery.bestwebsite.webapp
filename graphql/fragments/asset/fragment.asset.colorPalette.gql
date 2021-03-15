@@ -1,0 +1,9 @@
+fragment assetColorPalette on AssetInterface {
+  assetColorPalette(limit: 1) {
+    id
+    ... on assetColors_Category {
+      id
+      assetColor
+    }
+  }
+}

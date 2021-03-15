@@ -1,12 +1,11 @@
 <template>
-  <section :class="[tw, 'grid  gap-8  md:gap-16']">
+  <section :class="[tw, 'grid  gap-8']">
     <main>
       <CardWebsite :entry="entry" />
     </main>
-    <aside>
+    <aside class="p-8">
       <h1 class="text-5xl">{{ entry.title }}</h1>
       <p class="font-light text-blue-500 mt-4">SOTD: {{ entry.postDate }}</p>
-      {{ entry.categoryCountry[0].uri }}
       <Link v-if="entry.categoryCountry[0]" :to="entry.categoryCountry[0].uri">
         {{ entry.categoryCountry[0].title }}
       </Link>
@@ -34,6 +33,7 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 import CardWebsite from '~/components/Card/CardWebsite'
 import Link from '~/components/Link/Link'
+
 export default defineComponent({
   name: 'BlockSiteSummary',
   components: {
@@ -44,7 +44,6 @@ export default defineComponent({
     tw: {
       type: String,
       default: '',
-      required: true,
     },
     entry: {
       type: Object,

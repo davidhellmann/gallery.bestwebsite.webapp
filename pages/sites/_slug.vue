@@ -2,7 +2,7 @@
   <SectionEl>
     <div class="container mt-24">
       <Link to="/">Back to home</Link>
-      <BlockSiteSummary :entry="entry || null"></BlockSiteSummary>
+      <BlockSiteSummary v-if="entry" :entry="entry || null"></BlockSiteSummary>
     </div>
   </SectionEl>
 </template>
@@ -30,11 +30,13 @@ export default defineComponent({
   apollo: {
     entry: {
       query: websites,
-      variables: {
-        id: 99940,
-        queryCategories: true,
-        queryPreviewScreenshot: true,
-        queryStarratings: true,
+      variables() {
+        return {
+          slug: this.$route.params.slug || null,
+          queryCategories: true,
+          queryPreviewScreenshot: true,
+          queryStarratings: true,
+        }
       },
     },
   },

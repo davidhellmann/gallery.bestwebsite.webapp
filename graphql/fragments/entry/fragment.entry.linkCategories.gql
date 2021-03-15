@@ -1,0 +1,9 @@
+#import "../category/fragment.category.metaData.gql"
+
+fragment entryLinkCategories on EntryInterface {
+  ... on links_links_Entry {
+    categoryLinks {
+      ...categoryMetaData
+    }
+  }
+}

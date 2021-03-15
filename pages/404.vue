@@ -3,8 +3,8 @@
     <div>
       <Logo />
       <h1 class="title">davidhellmann-webapp</h1>
-      <Button to="/" variant="primary">Home</Button>
-      <Button to="/test" variant="secondary">Test</Button>
+      <Link to="/">Home</Link>
+      <Link to="/test">Home</Link>
       <ul style="display: flex; flex-flow: row wrap">
         <li v-for="entry in entries" :key="entry.id" class="box">
           <h3>{{ entry.title }}</h3>
@@ -39,8 +39,13 @@
 <script>
 import { defineComponent } from '@nuxtjs/composition-api'
 import websites from '../graphql/entries.websites.gql'
+import Link from '~/components/Link/Link'
 
 export default defineComponent({
+  comments: {
+    Link,
+  },
+  components: { Link },
   apollo: {
     entries: {
       query: websites,

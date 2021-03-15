@@ -1,10 +1,10 @@
 <template>
   <div :class="[tw]">
     <TextHeadline size="h2" variant="block">{{ headline }}</TextHeadline>
-    <ul class="grid grid-cols-3 gap-8">
+    <ul class="grid grid-cols-4 gap-8">
       <template v-for="(entry, index) in entries">
         <li :key="index">
-          <CardWebsite :entry="entry" />
+          <CardLink :entry="entry" :fallback-image="fallbackImage || null" />
         </li>
       </template>
     </ul>
@@ -14,14 +14,12 @@
 <script>
 import { defineComponent } from '@nuxtjs/composition-api'
 import TextHeadline from '@/components/Text/Headline'
-import CardWebsite from '~/components/Card/CardWebsite'
-// import Link from '~/components/Link/Link'
+import CardLink from '@/components/Card/CardLink'
 export default defineComponent({
-  name: 'BlockRelatedWebsites',
+  name: 'BlockRelatedLinks',
   components: {
+    CardLink,
     TextHeadline,
-    // Link,
-    CardWebsite,
   },
   props: {
     tw: {
@@ -39,7 +37,11 @@ export default defineComponent({
     },
     headline: {
       type: String,
-      default: 'Latest Winners',
+      default: 'Interesting Links',
+    },
+    fallbackImage: {
+      type: Array,
+      default: () => [],
     },
   },
   data() {
