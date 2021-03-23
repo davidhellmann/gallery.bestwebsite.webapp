@@ -1,9 +1,19 @@
 <script>
 /**
- * Example:
+ * Example Vue2:
  * <Dimensions>
  *   <h3
  *     slot-scope="{ width }"
+ *     class="text-30p md:text-40p mb-20p"
+ *     :class="[width > 400 ? 'bg-red' : '']"
+ *   >
+ *     ...
+ *   </h3>
+ * </Dimensions>
+ *
+ * Example Vue3:
+ * <Dimensions v-slot="{ width, height }">
+ *   <h3
  *     class="text-30p md:text-40p mb-20p"
  *     :class="[width > 400 ? 'bg-red' : '']"
  *   >

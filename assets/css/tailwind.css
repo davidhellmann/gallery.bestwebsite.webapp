@@ -8,6 +8,7 @@
 @import './base/global.css';
 @import './base/typography.css';
 @import './base/webfonts.css';
+@import './base/transitions.page.css';
 
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';

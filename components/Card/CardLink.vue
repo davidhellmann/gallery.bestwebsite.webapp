@@ -1,7 +1,7 @@
 <template>
   <div
     :class="[
-      'rounded-xl overflow-hidden shadow hover:shadow-2xl transition duration-300 transform hover:-translate-y-0.5 cursor-pointer',
+      'rounded-xl overflow-hidden shadow hover:shadow-2xl transition duration-300 transform hover:-translate-y-0.5 cursor-pointer flex flex-col',
       tw,
     ]"
   >

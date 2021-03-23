@@ -51,6 +51,8 @@ export default defineNuxtConfig({
     '@nuxtjs/composition-api',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    // Doc: https://tailwindcss.nuxtjs.org/
+    '@nuxtjs/tailwindcss',
   ],
   /*
    ** Nuxt.js modules
@@ -118,13 +120,15 @@ export default defineNuxtConfig({
   build: {
     postcss: {
       plugins: {
-        tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
-        'postcss-nested': {},
         'postcss-hexrgba': {},
       },
     },
     preset: {
       stage: 1, // see https://tailwindcss.com/docs/using-with-preprocessors#future-css-featuress
     },
+    transpile: ['vuex-composition-helpers'],
+  },
+  tailwindcss: {
+    jit: true,
   },
 })
