@@ -105,6 +105,12 @@ export default defineNuxtConfig({
           },
         },
         {
+          path: '/links/:year/:month/:day/:slug',
+          components: {
+            default: resolve(__dirname, 'pages/links/_slug'), // or routes[index].component
+          },
+        },
+        {
           path: '*',
           components: {
             default: resolve(__dirname, 'pages/404'), // or routes[index].component

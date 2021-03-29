@@ -7,7 +7,7 @@
 
 @layer base {
   body {
-    @apply bg-gray-100 text-gray-800 font-medium;
+    @apply bg-gray-100 text-gray-800 font-normal;
   }
 
   img {

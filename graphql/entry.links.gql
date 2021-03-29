@@ -4,14 +4,16 @@
 #import "./fragments/asset/fragment.asset.imager.shareImage.gql"
 #import "./fragments/asset/fragment.asset.colorPalette.gql"
 
-query entriesLinks(
+query entryQuery(
   $section: [String] = "links",
-  $limit: Int,
-  $queryCategories: Boolean = false,
+  $id: [QueryArgument] = null,
+  $slug: [String] = "",
   $queryOGImage: Boolean = false,
+  $queryCategories: Boolean = false,
 ) {
-  entriesLinks: entries(section: $section, limit: $limit) {
+  entry(section: $section, id: $id, slug: $slug) {
     ...entryMetaData
+    singleLinkSource
     ... on links_links_Entry {
       singleLinkSource
       ...entryLinkCategories @include(if: $queryCategories)

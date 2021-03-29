@@ -4,7 +4,11 @@
     <ul class="grid grid-cols-4 gap-8">
       <template v-for="(entry, index) in entries">
         <li :key="index">
-          <CardLink :entry="entry" :fallback-image="fallbackImage || null" />
+          <CardLink
+            :entry="entry"
+            :fallback-image="fallbackImage || null"
+            tw="h-full"
+          />
         </li>
       </template>
     </ul>

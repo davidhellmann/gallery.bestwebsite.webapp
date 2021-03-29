@@ -1,7 +1,7 @@
 <template>
   <div
     :class="[
-      'rounded-xl overflow-hidden shadow hover:shadow-2xl transition duration-300 transform hover:-translate-y-0.5 cursor-pointer flex flex-col',
+      'rounded-xl overflow-hidden shadow hover:shadow-2xl bg-white transition duration-300 transform hover:-translate-y-0.5 cursor-pointer flex flex-col',
       tw,
     ]"
   >
@@ -12,17 +12,25 @@
         :image="entry.imageOGImage[0] || fallbackImage[0]"
       />
     </Link>
+    <div class="p-8">
+      <span class="text-gold text-xs">{{ stripUrlComputed }}</span>
+      <TextHeadline size="div" variant="h3">
+        {{ entry.title }}
+      </TextHeadline>
+    </div>
   </div>
 </template>
 
 <script>
 import { defineComponent } from '@nuxtjs/composition-api'
 import Link from '@/components/Link/Link'
+import TextHeadline from '@/components/Text/Headline'
+import { useRootUrl } from '~/composables/useRootUrl'
 import ImageRes from '~/components/Image/ImageRes'
 
 export default defineComponent({
   name: 'CardLink',
-  components: { Link, ImageRes },
+  components: { TextHeadline, Link, ImageRes },
   props: {
     tw: {
       type: String,
@@ -38,12 +46,9 @@ export default defineComponent({
       default: () => [],
     },
   },
-  data() {
-    return {
-      ratings: [],
-    }
+  setup(props) {
+    const { stripUrlComputed } = useRootUrl(props.entry.singleLinkSource)
+    return { stripUrlComputed }
   },
-  mounted() {},
-  methods: {},
 })
 </script>
