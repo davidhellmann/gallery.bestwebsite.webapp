@@ -1,11 +1,11 @@
 <template>
-  <div :class="['fixed top-0 left-0 right-0 h-12 md:h-24 z-10 ', tw]">
+  <header :class="['fixed top-0 left-0 right-0 h-12 md:h-24 z-10 ', tw]">
     <div
-      class="absolute inset-0 bg-gray-100 opacity-90"
+      class="absolute inset-0 bg-gray-100 dark:bg-gray-900 opacity-90"
       style="backdrop-filter: blur(10px)"
     ></div>
     <LayoutNavMain />
-  </div>
+  </header>
 </template>
 
 <script>

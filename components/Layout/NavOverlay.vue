@@ -1,7 +1,7 @@
 <!---->
 <template>
   <div
-    :class="['fixed inset-0 bg-gray-100 opacity-90', tw]"
+    :class="['fixed inset-0 bg-gray-100 dark:bg-gray-900 opacity-90', tw]"
     style="backdrop-filter: blur(10px)"
   >
     LayoutNavOverlay

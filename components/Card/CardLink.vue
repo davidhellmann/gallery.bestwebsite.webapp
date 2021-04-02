@@ -1,7 +1,9 @@
 <template>
   <div
     :class="[
-      'rounded-xl overflow-hidden shadow hover:shadow-2xl bg-white transition duration-300 transform hover:-translate-y-0.5 cursor-pointer flex flex-col',
+      'group rounded-xl overflow-hidden shadow hover:shadow-2xl',
+      'bg-white transition duration-300 transform hover:-translate-y-0.5 cursor-pointer flex flex-col',
+      'dark:bg-gray-800 dark:text-gray-400',
       tw,
     ]"
   >
@@ -13,8 +15,14 @@
       />
     </Link>
     <div class="p-8">
-      <span class="text-gold text-xs">{{ stripUrlComputed }}</span>
-      <TextHeadline size="div" variant="h3">
+      <span class="text-gold text-xs mb-2 inline-block">{{
+        stripUrlComputed
+      }}</span>
+      <TextHeadline
+        size="div"
+        variant="h5"
+        tw="dark:group-hover:text-white transition duration-300"
+      >
         {{ entry.title }}
       </TextHeadline>
     </div>

@@ -6,6 +6,7 @@
     ]"
   >
     <Logo :class="['relative z-10']" />
+    <ButtonDarkMode tw="z-10" />
     <Link
       tw="relative z-10 overflow-hidden h-8 rounded flex justify-end items-center
       focus:outline-none
@@ -15,17 +16,17 @@
       aria-controls="navMain"
       @click.native="toggleNavMainOpen(!navMainOpen)"
     >
-      <div class="relative w-28 h-full">
+      <div class="relative w-28 h-full dark:text-gray-100 font-medium">
         <span
           :class="[
-            'transition duration-300 delay-300 absolute right-0 top-0 leading-[2rem] transform',
+            'transition transition-transform duration-300 delay-300 absolute right-0 top-0 leading-[2rem] transform',
             navMainOpen ? '-translate-y-full' : '',
           ]"
           >Menu / Filter</span
         >
         <span
           :class="[
-            'transition duration-300 delay-300 absolute right-0 top-0 leading-[2rem] transform',
+            'transition transition-transform duration-300 delay-300 absolute right-0 top-0 leading-[2rem] transform',
             navMainOpen ? '' : 'translate-y-full',
           ]"
           >Close Menu</span
@@ -34,7 +35,7 @@
       <div class="burger w-6 h-0.5 ml-4 relative" aria-hidden="true">
         <div
           :class="[
-            'bg-gray-900 h-0.5 w-5 absolute transform origin-center transition duration-300 delay-300',
+            'bg-blue-500 dark:bg-gray-400 h-0.5 w-5 absolute transform origin-center transition duration-300 delay-300',
             navMainOpen
               ? 'rotate-[135deg] scale-x-100'
               : 'scale-x-75 translate-x-[-2px] -translate-y-1',
@@ -42,7 +43,7 @@
         ></div>
         <div
           :class="[
-            'bg-gray-900 h-0.5 w-5 absolute transition transform duration-300 delay-300',
+            'bg-blue-500 dark:bg-gray-400 h-0.5 w-5 absolute transition transform duration-300 delay-300',
             navMainOpen ? 'rotate-[-135deg]' : 'translate-y-1',
           ]"
         ></div>
@@ -60,11 +61,12 @@ import LayoutNavOverlay from '@/components/Layout/NavOverlay'
 import Logo from '@/components/Logo/Logo'
 import Link from '@/components/Link/Link'
 import { createNamespacedHelpers } from 'vuex-composition-helpers/dist'
+import ButtonDarkMode from '@/components/Button/DarkMode'
 const { useState, useMutations } = createNamespacedHelpers('ui')
 
 export default defineComponent({
   name: 'LayoutNavMain',
-  components: { Link, Logo, LayoutNavOverlay },
+  components: { ButtonDarkMode, Link, Logo, LayoutNavOverlay },
   props: {
     tw: {
       type: String,

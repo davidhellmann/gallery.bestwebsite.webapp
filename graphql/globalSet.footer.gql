@@ -1,0 +1,17 @@
+query footer {
+  globalSetFooter: globalSet {
+    ... on footer_GlobalSet {
+      id
+      name
+      globalAbout {
+        ... on globalAbout_BlockType {
+          id
+          headline
+          copy
+          quote
+        }
+      }
+    }
+  }
+}
+

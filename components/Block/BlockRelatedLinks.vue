@@ -1,6 +1,8 @@
 <template>
   <div :class="[tw]">
-    <TextHeadline size="h2" variant="block">{{ headline }}</TextHeadline>
+    <TextHeadline size="h2" variant="block" text-color-variant="default">{{
+      headline
+    }}</TextHeadline>
     <ul class="grid grid-cols-4 gap-8">
       <template v-for="(entry, index) in entries">
         <li :key="index">
