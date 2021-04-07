@@ -8,4 +8,7 @@ module.exports = {
     msFactor: 1.2,
     lineHeight: 1.6,
   },
+  grid: {
+    cols: 24,
+  },
 }

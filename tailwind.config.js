@@ -42,8 +42,8 @@ module.exports = {
       serif: ['Georgia', 'Times New Roman', 'Times', 'serif'],
       mono: ['"Courier New"', 'Courier', 'monospace'],
     },
-    fontSize: settingsFontSizes.fontSize,
-    colors: settingsColors.colors,
+    fontSize: settingsFontSizes,
+    colors: settingsColors,
     extend: {
       spacing: {
         '50vh': '50vh',

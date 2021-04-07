@@ -2,7 +2,7 @@
  * Tailwind Grid Settings
  */
 
-const cols = 24
+const settings = require('./tailwind.settings')
 const createItems = (count, keyPrefix, output) => {
   return Array.from(new Array(count + 1), (entry, index) => index).reduce(
     (a, b) => ({
@@ -13,8 +13,12 @@ const createItems = (count, keyPrefix, output) => {
 }
 
 module.exports = {
-  gridTemplateColumns: createItems(cols, '', `repeat($$$, minmax(0, 1fr))`),
-  gridColumn: createItems(cols, 'span-', `span $$$ / span $$$`),
-  gridRowStart: createItems(cols, '', `$$$`),
-  gridRowEnd: createItems(cols, '', `$$$`),
+  gridTemplateColumns: createItems(
+    settings.grid.cols,
+    '',
+    `repeat($$$, minmax(0, 1fr))`
+  ),
+  gridColumn: createItems(settings.grid.cols, 'span-', `span $$$ / span $$$`),
+  gridRowStart: createItems(settings.grid.cols, '', `$$$`),
+  gridRowEnd: createItems(settings.grid.cols, '', `$$$`),
 }
