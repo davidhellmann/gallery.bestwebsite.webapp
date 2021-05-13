@@ -4,7 +4,7 @@
       <CardWebsite :entry="entry" />
     </main>
     <aside class="p-8">
-      <h1 class="text-5xl">{{ entry.title }}</h1>
+      <h1 class="text-5xl font-medium">{{ entry.title }}</h1>
       <p class="font-light text-blue-500 mt-4">SOTD: {{ entry.postDate }}</p>
       <Link v-if="entry.categoryCountry[0]" :to="entry.categoryCountry[0].uri">
         {{ entry.categoryCountry[0].title }}

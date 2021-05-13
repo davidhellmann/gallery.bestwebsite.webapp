@@ -160,14 +160,14 @@ module.exports = (theme) => {
           },
         },
         {
-          fontSize: `${settings.typography.fontSize}rem`,
+          fontSize: theme('fontSize.base'),
           lineHeight: settings.typography.lineHeight,
           p: {
             marginTop: em(20, 16),
             marginBottom: em(20, 16),
           },
           '[class~="lead"]': {
-            fontSize: theme('fontSize.xl[0]'),
+            fontSize: theme('fontSize.xl'),
             lineHeight: settings.typography.lineHeight - 0.2,
             marginTop: em(24, 20),
             marginBottom: em(24, 20),
@@ -178,27 +178,27 @@ module.exports = (theme) => {
             paddingLeft: em(20, 20),
           },
           h1: {
-            fontSize: theme('fontSize.3xl[0]'),
+            fontSize: theme('fontSize.3xl'),
             marginTop: '0',
             marginBottom: em(32, 36),
-            lineHeight: theme('fontSize.3xl[1]'),
+            lineHeight: theme('fontSize.3xl'),
           },
           h2: {
-            fontSize: theme('fontSize.2xl[0]'),
+            fontSize: theme('fontSize.2xl'),
             marginTop: em(48, 24),
             marginBottom: em(24, 24),
-            lineHeight: theme('fontSize.2xl[1]'),
+            lineHeight: theme('fontSize.2xl'),
           },
           h3: {
-            fontSize: theme('fontSize.xl[0]'),
+            fontSize: theme('fontSize.xl'),
             marginTop: em(32, 20),
             marginBottom: em(12, 20),
-            lineHeight: theme('fontSize.xl[1]'),
+            lineHeight: theme('fontSize.xl'),
           },
           h4: {
             marginTop: em(24, 16),
             marginBottom: em(8, 16),
-            lineHeight: theme('fontSize.l[1]'),
+            lineHeight: theme('fontSize.l'),
           },
           img: {
             marginTop: em(32, 16),
@@ -217,12 +217,12 @@ module.exports = (theme) => {
             marginBottom: '0',
           },
           'figure figcaption': {
-            fontSize: theme('fontSize.sm[0]'),
+            fontSize: theme('fontSize.sm'),
             lineHeight: settings.typography.lineHeight,
             marginTop: em(12, 14),
           },
           code: {
-            fontSize: theme('fontSize.sm[0]'),
+            fontSize: theme('fontSize.sm'),
           },
           'h2 code': {
             fontSize: em(21, 24),
@@ -231,7 +231,7 @@ module.exports = (theme) => {
             fontSize: em(18, 20),
           },
           pre: {
-            fontSize: theme('fontSize.sm[0]'),
+            fontSize: theme('fontSize.sm'),
             lineHeight: settings.typography.lineHeight,
             marginTop: em(24, 14),
             marginBottom: em(24, 14),
@@ -305,7 +305,7 @@ module.exports = (theme) => {
             marginTop: '0',
           },
           table: {
-            fontSize: theme('fontSize.sm[0]'),
+            fontSize: theme('fontSize.sm'),
             lineHeight: settings.typography.lineHeight,
           },
           'thead th': {
@@ -345,14 +345,14 @@ module.exports = (theme) => {
     md: {
       css: [
         {
-          fontSize: theme('fontSize.lg[0]'),
+          fontSize: theme('fontSize.lg'),
           lineHeight: settings.typography.lineHeight,
           p: {
             marginTop: em(24, 20),
             marginBottom: em(24, 20),
           },
           '[class~="lead"]': {
-            fontSize: theme('fontSize.2xl[0]'),
+            fontSize: theme('fontSize.2xl'),
             lineHeight: settings.typography.lineHeight - 0.2,
             marginTop: em(24, 24),
             marginBottom: em(24, 24),
@@ -363,27 +363,27 @@ module.exports = (theme) => {
             paddingLeft: em(32, 30),
           },
           h1: {
-            fontSize: theme('fontSize.4xl[0]'),
+            fontSize: theme('fontSize.4xl'),
             marginTop: '0',
             marginBottom: em(48, 56),
-            lineHeight: theme('fontSize.4xl[1]'),
+            lineHeight: theme('fontSize.4xl'),
           },
           h2: {
-            fontSize: theme('fontSize.3xl[0]'),
+            fontSize: theme('fontSize.3xl'),
             marginTop: em(56, 36),
             marginBottom: em(32, 36),
-            lineHeight: theme('fontSize.3xl[1]'),
+            lineHeight: theme('fontSize.3xl'),
           },
           h3: {
-            fontSize: theme('fontSize.2xl[0]'),
+            fontSize: theme('fontSize.2xl'),
             marginTop: em(48, 30),
             marginBottom: em(20, 30),
-            lineHeight: theme('fontSize.2xl[1]'),
+            lineHeight: theme('fontSize.2xl'),
           },
           h4: {
             marginTop: em(36, 20),
             marginBottom: em(12, 20),
-            lineHeight: theme('fontSize.xl[1]'),
+            lineHeight: theme('fontSize.xl'),
           },
           img: {
             marginTop: em(40, 20),
@@ -402,12 +402,12 @@ module.exports = (theme) => {
             marginBottom: '0',
           },
           'figure figcaption': {
-            fontSize: theme('fontSize.base[0]'),
+            fontSize: theme('fontSize.base'),
             lineHeight: settings.typography.lineHeight,
             marginTop: em(18, 18),
           },
           code: {
-            fontSize: theme('fontSize.base[0]'),
+            fontSize: theme('fontSize.base'),
           },
           'h2 code': {
             fontSize: em(31, 36),
@@ -416,7 +416,7 @@ module.exports = (theme) => {
             fontSize: em(27, 30),
           },
           pre: {
-            fontSize: theme('fontSize.base[0]'),
+            fontSize: theme('fontSize.base'),
             lineHeight: settings.typography.lineHeight,
             marginTop: em(36, 18),
             marginBottom: em(36, 18),
@@ -490,7 +490,7 @@ module.exports = (theme) => {
             marginTop: '0',
           },
           table: {
-            fontSize: theme('fontSize.base[0]'),
+            fontSize: theme('fontSize.base'),
             lineHeight: settings.typography.lineHeight,
           },
           'thead th': {

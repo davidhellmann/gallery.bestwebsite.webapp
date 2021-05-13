@@ -11,13 +11,15 @@
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style",
     "test": "jest",
-    "fragmentTypes": "node fetchPossibleTypes.js"
+    "fragmentTypes": "node fetchPossibleTypes.js",
+    "create:svg": "node svgToVueComps.js"
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.1-rc.3",
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/composition-api": "^0.22.1",
     "@nuxtjs/dotenv": "^1.4.1",
+    "glob": "^7.1.6",
     "graphql-tag": "^2.11.0",
     "nuxt": "^2.15.2",
     "typeface-jetbrains-mono": "^2.0.0",
@@ -26,6 +28,8 @@
     "vuex-composition-helpers": "^1.0.23"
   },
   "devDependencies": {
+    "@babel/core": "7.13.15",
+    "@babel/preset-env": "7.13.15",
     "@graphql-codegen/cli": "^1.20.1",
     "@graphql-codegen/fragment-matcher": "^2.0.1",
     "@nuxtjs/eslint-config": "^5.0.0",
@@ -37,7 +41,6 @@
     "@tailwindcss/typography": "^0.4.0",
     "@vue/test-utils": "^1.1.3",
     "autoprefixer": "^10.2.4",
-    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.5.2",
     "css-loader": "^5.1.1",

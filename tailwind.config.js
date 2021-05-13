@@ -1,13 +1,15 @@
 /*
+ * TailwindCSS Config
  * Opatciy Map for Colors
  * https://www.viget.com/articles/tips-for-your-tailwind-config/
  * */
 
 // Settings
+const settingsScreens = require('./tailwindcss/tailwind.settings.screens')
 const settingsGrid = require('./tailwindcss/tailwind.settings.grid')
 const settingsFontSizes = require('./tailwindcss/tailwind.settings.fontSizes')
 const settingsColors = require('./tailwindcss/tailwind.settings.colors')
-const settingsProse = require('./tailwindcss/tailwind.settings.prose')
+// const settingsProse = require('./tailwindcss/tailwind.settings.prose')
 
 // Plugins
 const pluginAddComponents = require('./tailwindcss/tailwind.plugins.addComponents')
@@ -30,13 +32,7 @@ module.exports = {
   },
   darkMode: 'class', // or 'media' or 'class'
   theme: {
-    screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      '2xl': '1536px',
-    },
+    screens: settingsScreens,
     fontFamily: {
       sans: ['Rubik', 'Helvetica', 'Arial', 'sans-serif'],
       serif: ['Georgia', 'Times New Roman', 'Times', 'serif'],
@@ -58,7 +54,7 @@ module.exports = {
       gridRowStart: { ...settingsGrid.gridRowStart },
       gridRowEnd: { ...settingsGrid.gridRowEnd },
       // Typography Plugin
-      typography: (theme) => settingsProse(theme),
+      // typography: (theme) => settingsProse(theme),
     },
   },
   variants: {},
@@ -68,9 +64,9 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography')({
-      modifiers: ['md'],
-    }),
+    // require('@tailwindcss/typography')({
+    //   modifiers: ['md'],
+    // }),
     require('tailwindcss-question-mark'),
     function ({ addComponents }) {
       addComponents(pluginAddComponents)

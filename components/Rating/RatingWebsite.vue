@@ -6,20 +6,22 @@
         :key="item.name"
         class="flex items-center"
       >
-        <div class="flex-shrink-0 flex-grow-0 w-24 text-xs uppercase font-bold">
+        <div class="flex-shrink-0 flex-grow-0 w-24 text-xs uppercase">
           {{ item.name }}
         </div>
         <div
           class="flex-auto bg-gray-100 h-1.5 relative rounded-full overflow-hidden"
         >
           <span
-            class="bg-gray-400 h-full inline-block absolute left-0"
-            :style="{ width: item.ratingPercent }"
+            class="bg-gray-400 h-full w-full inline-block absolute left-0 rounded-full bg-gradient-to-r from-gray-200 to-gold"
+            :style="{
+              clipPath: `inset(0 ${item.ratingPercent} 0 0 round 15px`,
+            }"
           ></span>
         </div>
-        <div class="flex-shrink-0 flex-grow-0 w-12 ml-auto text-right">
+        <!--        <div class="flex-shrink-0 flex-grow-0 w-12 ml-auto text-right">
           {{ item.rating }}
-        </div>
+        </div>-->
       </li>
     </ul>
     <div v-if="finalResult" class="w-1/2 px-8 py-4">

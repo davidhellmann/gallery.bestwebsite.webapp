@@ -8,7 +8,7 @@
     <Logo :class="['relative z-10']" />
     <ButtonDarkMode tw="z-10" />
     <Link
-      tw="relative z-10 overflow-hidden h-8 rounded flex justify-end items-center
+      tw="text-uiBase relative z-10 overflow-hidden h-8 rounded flex justify-end items-center
       focus:outline-none
       focus-visible:ring
       focus-visible:ring-gray-900"

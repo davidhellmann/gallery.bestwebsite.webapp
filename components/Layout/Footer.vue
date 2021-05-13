@@ -10,7 +10,7 @@
         class="container mt-24 py-20 text-center md:text-left md:grid md:gap-x-16 md:grid-cols-3"
       >
         <blockquote v-if="globalAbout.quote" class="col-span-2">
-          <p class="font-bold text-7xl">
+          <p class="font-bold text-7xl leading-none">
             {{ globalAbout.quote }}
           </p>
         </blockquote>

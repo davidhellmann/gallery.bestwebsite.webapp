@@ -1,7 +1,7 @@
 <template>
   <Link
     :class="[
-      'flex flex-row items-center font-medium text-gray-900 group dark:text-gray-100',
+      'flex flex-row items-center font-medium text-gray-900 group dark:text-gray-100 text-uiBase',
       tw,
     ]"
     to="/"
