@@ -1,5 +1,5 @@
 <template>
-  <section :class="[tw, 'grid  gap-8']">
+  <div :class="[tw, 'grid  gap-8']">
     <main>
       <CardLink :entry="entry" :fallback-image="fallbackImage || null" />
     </main>
@@ -28,7 +28,7 @@
         </li>
       </ul>-->
     </aside>
-  </section>
+  </div>
 </template>
 
 <script>

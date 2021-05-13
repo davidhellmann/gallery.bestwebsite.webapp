@@ -3,7 +3,7 @@ const fs = require('fs')
 const glob = require('glob')
 
 const srcDir = path.resolve(path.join(process.cwd(), 'assets', 'images/svg'))
-const distDir = path.resolve(path.join(process.cwd(), 'components', '_SVGs/'))
+const distDir = path.resolve(path.join(process.cwd(), 'components', 'svg/'))
 
 function readSVG(file) {
   return fs.readFileSync(file, 'utf-8')

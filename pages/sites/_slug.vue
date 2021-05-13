@@ -3,6 +3,7 @@
     <div class="container mt-24">
       <Link to="/">Back to home</Link>
       <BlockSiteSummary v-if="entry" :entry="entry || null"></BlockSiteSummary>
+      <div v-else>LOADING</div>
     </div>
   </SectionEl>
 </template>

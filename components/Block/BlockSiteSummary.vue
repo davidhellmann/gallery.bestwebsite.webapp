@@ -1,5 +1,5 @@
 <template>
-  <section :class="[tw, 'grid  gap-8']">
+  <div :class="[tw, 'grid  gap-8']">
     <main>
       <CardWebsite :entry="entry" />
     </main>
@@ -26,7 +26,7 @@
         </li>
       </ul>
     </aside>
-  </section>
+  </div>
 </template>
 
 <script>

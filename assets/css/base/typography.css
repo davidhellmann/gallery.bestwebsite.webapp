@@ -10,7 +10,7 @@
 @font-face {
   font-family: 'Rubik';
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
   font-weight: 400;
   src: local('Rubik'), local('Rubik'),
   url('~assets/fonts/rubik-latin-400.woff2') format('woff2');
@@ -19,7 +19,7 @@
 @font-face {
   font-family: 'Rubik';
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
   font-weight: 500;
   src: local('Rubik'), local('Rubik'),
   url('~assets/fonts/rubik-latin-500.woff2') format('woff2');
@@ -28,7 +28,7 @@
 @font-face {
   font-family: 'Rubik';
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
   font-weight: 700;
   src: local('Rubik'), local('Rubik'),
   url('~assets/fonts/rubik-latin-700.woff2') format('woff2');
@@ -37,7 +37,7 @@
 @font-face {
   font-family: 'Rubik';
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
   font-weight: 900;
   src: local('Rubik'), local('Rubik'),
   url('~assets/fonts/rubik-latin-900.woff2') format('woff2');
