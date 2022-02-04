@@ -10,6 +10,11 @@ module.exports = {
   black,
   white,
   gray: warmGray,
+  dot: {
+    red: '#FF5F57',
+    yellow: '#FEBC2E',
+    green: '#28C840',
+  },
   blue: {
     50: '#fafcff',
     100: '#fafcff',
