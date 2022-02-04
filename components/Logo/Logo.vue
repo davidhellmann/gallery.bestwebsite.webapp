@@ -17,8 +17,8 @@
     ></span>
     <span
       class="absolute left-0 w-44 transition transform translate-x-6 group-hover:translate-x-12"
-      >Best Website Gallery</span
-    >
+      >Best Website Gallery
+    </span>
   </Link>
 </template>
 
