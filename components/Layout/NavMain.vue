@@ -19,7 +19,7 @@
       <div class="relative w-28 h-full dark:text-gray-100 font-medium">
         <span
           :class="[
-            'transition transition-transform duration-300 delay-300 absolute right-0 top-0 leading-[2rem] transform',
+            'hidden sm:inline-block transition transition-transform duration-300 delay-300 absolute right-0 top-0 leading-[2rem] transform',
             navMainOpen ? '-translate-y-full' : '',
           ]"
           >Menu / Filter</span

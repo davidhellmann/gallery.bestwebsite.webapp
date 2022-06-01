@@ -2,7 +2,7 @@
 <template>
   <button
     :class="[
-      'w-5 h-5 absolute left-1/2 transform -translate-x-1/2 select-none focus:outline-none  focus-visible:ring  focus-visible:ring-gray-900',
+      'w-5 h-5 absolute left-1/2 transform -translate-x-1/2 -translate-y-px select-none focus:outline-none  focus-visible:ring  focus-visible:ring-gray-900',
       tw,
     ]"
     @click="toggleMode"

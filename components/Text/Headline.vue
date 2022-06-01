@@ -10,10 +10,6 @@
 
 <script>
 import { defineComponent, ref } from '@nuxtjs/composition-api'
-import {
-  useCompVariant,
-  useCompTextColorVariant,
-} from '~/composables/useCompVariant'
 import { useHasDefaultSlot } from '~/composables/useHasDefaultSlot'
 export default defineComponent({
   name: 'TextHeadline',
@@ -52,10 +48,9 @@ export default defineComponent({
       default: 'dark:text-gray-400',
     })
 
-    const { compVariant } = useCompVariant(variants.value[props.variant])
-    const { compTextColorVariant } = useCompTextColorVariant(
-      textColorVariants.value[props.textColorVariant]
-    )
+    const compVariant = variants.value[props.variant] ?? ''
+    const compTextColorVariant =
+      textColorVariants.value[props.textColorVariant] ?? ''
     const { hasDefaultSlot } = useHasDefaultSlot(slots.default)
     return { compVariant, compTextColorVariant, hasDefaultSlot }
   },

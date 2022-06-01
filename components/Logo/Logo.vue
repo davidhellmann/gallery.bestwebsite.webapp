@@ -16,8 +16,11 @@
       class="w-3 h-3 group-hover:w-2 group-hover:h-2 absolute left-0 group-hover:translate-x-6 opacity-0 group-hover:opacity-100 transition transition-all transform -translate-y-px rounded-xl bg-blue-500 dark:bg-gray-400 group-hover:bg-dot-green inline-block"
     ></span>
     <span
-      class="absolute left-0 w-44 transition transform translate-x-6 group-hover:translate-x-12"
-      >Best Website Gallery
+      class="absolute left-0 w-44 transition transform translate-x-5 sm:translate-x-6 group-hover:translate-x-10 group-hover:sm:translate-x-11"
+      >B<span class="hidden sm:inline">est </span>W<span
+        class="hidden sm:inline"
+        >ebsite </span
+      >G<span class="hidden sm:inline">allery</span>
     </span>
   </Link>
 </template>

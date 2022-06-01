@@ -1,42 +1,35 @@
 <template>
-  <div :class="[tw, 'grid  gap-8']">
-    <main>
+  <div :class="[tw, 'grid grid-cols-1 lg:grid-cols-3 gap-8']">
+    <main class="col-span-1 lg:col-span-2">
       <CardWebsite :entry="entry" />
     </main>
-    <aside class="p-8">
+    <aside class="col-span-1 lg:p-8">
       <h1 class="text-5xl font-medium">{{ entry.title }}</h1>
       <p class="font-light text-blue-500 mt-4">SOTD: {{ entry.postDate }}</p>
       <Link v-if="entry.categoryCountry[0]" :to="entry.categoryCountry[0].uri">
         {{ entry.categoryCountry[0].title }}
       </Link>
-      <ul v-if="entry.categoryColor.length > 0" class="flex flex-row">
-        <li v-for="item in entry.categoryColor" :key="item.title">
-          <a
-            :href="item.uri"
-            class="inline-block rounded-full w-8 h-8 p-1 mr-2 mt-2 shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-0.5"
-          >
-            <span
-              class="inline-block rounded-full w-full h-full border border-gray-200"
-              :style="{
-                backgroundColor:
-                  item.categoryFieldsColors[0].color || 'transparent',
-              }"
-            ></span>
-          </a>
-        </li>
-      </ul>
+      <StackColors
+        v-if="entry.categoryColor.length > 0"
+        :items="entry.categoryColor"
+      />
+      <StackTags v-if="Object.keys(finalTags).length" :items="finalTags" />
     </aside>
   </div>
 </template>
 
 <script>
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, ref } from '@nuxtjs/composition-api'
 import CardWebsite from '~/components/Card/CardWebsite'
 import Link from '~/components/Link/Link'
+import StackColors from '~/components/Stacks/StackColors'
+import StackTags from '~/components/Stacks/StackTags'
 
 export default defineComponent({
   name: 'BlockSiteSummary',
   components: {
+    StackColors,
+    StackTags,
     Link,
     CardWebsite,
   },
@@ -50,31 +43,26 @@ export default defineComponent({
       default: null,
     },
   },
-  data() {
-    return {}
+  setup(props) {
+    const finalTags = ref({
+      ...(props.entry?.categoryCMS?.length > 0 && {
+        cms: props.entry?.categoryCMS,
+      }),
+      ...(props.entry?.categoryStyle?.length > 0 && {
+        style: props.entry?.categoryStyle,
+      }),
+      ...(props.entry?.categoryFramework?.length > 0 && {
+        framework: props.entry?.categoryFramework,
+      }),
+      ...(props.entry?.categoryService?.length > 0 && {
+        services: props.entry?.categoryService,
+      }),
+      ...(props.entry?.categoryCreator?.length > 0 && {
+        creator: props.entry?.categoryCreator,
+      }),
+    })
+
+    return { finalTags }
   },
-  computed: {},
 })
 </script>
-
-<style lang="postcss" scoped>
-section {
-  grid-template-areas:
-    'main'
-    'aside';
-  grid-template-columns: 1fr;
-
-  @screen md {
-    grid-template-areas: 'main main aside';
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-main {
-  grid-area: main;
-}
-
-aside {
-  grid-area: aside;
-}
-</style>

@@ -1,7 +1,7 @@
 <template>
   <div :class="[tw]">
     <TextHeadline size="h2" variant="block">{{ headline }}</TextHeadline>
-    <ul class="grid grid-cols-3 gap-8">
+    <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
       <template v-for="(entry, index) in entries">
         <li :key="index">
           <CardWebsite :entry="entry" />
