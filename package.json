@@ -61,6 +61,6 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "tailwindcss-question-mark": "^0.1.0",
-    "vue-jest": "^3.0.7"
+    "vue-jest": "^4.0.1"
   }
 }
